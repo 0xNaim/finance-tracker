@@ -32,7 +32,6 @@ const CreateAndUpdateForm = ({ open, onClose, mode, initialData, action }) => {
 
 	// Populate form fields in edit mode
 	useEffect(() => {
-		console.log("mode: ", mode);
 		if (mode === "edit" && initialData) {
 			setValue("name", initialData.name);
 			setValue("type", initialData.type);

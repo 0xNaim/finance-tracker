@@ -16,26 +16,28 @@ const Transactions = ({
 			)}
 
 			{/* All transactions */}
-			<Box sx={{ backgroundColor: "primary.light", p: 2 }}>
-				<Stack>
-					<Typography variant="h6">All Transactions</Typography>
-				</Stack>
-				<Divider sx={{ my: 1 }} />
+			{transactions?.length > 0 && (
+				<Box sx={{ backgroundColor: "primary.light", p: 2 }}>
+					<Stack>
+						<Typography variant="h6">All Transactions</Typography>
+					</Stack>
+					<Divider sx={{ my: 1 }} />
 
-				<Box>
-					{transactions.map((transaction) => (
-						<>
-							<TransactionItem
-								key={transaction.id}
-								transaction={transaction}
-								deleteTransaction={deleteTransaction}
-								handleOpenEdit={handleOpenEdit}
-							/>
-							<Divider />
-						</>
-					))}
+					<Box>
+						{transactions.map((transaction) => (
+							<>
+								<TransactionItem
+									key={transaction.id}
+									transaction={transaction}
+									deleteTransaction={deleteTransaction}
+									handleOpenEdit={handleOpenEdit}
+								/>
+								<Divider />
+							</>
+						))}
+					</Box>
 				</Box>
-			</Box>
+			)}
 		</Box>
 	);
 };

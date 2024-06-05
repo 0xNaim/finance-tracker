@@ -24,8 +24,6 @@ const Tracker = () => {
 	// Use local storage hook
 	const [transactions, setTransactions] = useLocalStorage("transactions", []);
 
-	console.log("InitialData: ", initialData);
-
 	// Handle form submit
 	const handleCreate = (_, data, reset) => {
 		setTransactions((prevTransaction) => [
